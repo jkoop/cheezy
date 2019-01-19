@@ -1,0 +1,67 @@
+/*  Cheesy copyright 2002 - 2018 Tim Koop and 2018 Joe Koop  */
+.cheese {
+	position: absolute;
+	width: 21.7391304%;
+	height: 21.7391304%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url("cheese.png");
+	cursor: pointer;
+/*	opacity:0.25;
+	filter: blur(0.4vw);*/
+}
+.c1 {left: 0px}
+.c2 {left: 26.0869565%}
+.c3 {left: 52.173913%}
+.c4 {left: 78.2608695%}
+.r1 {top: 0px}
+.r2 {top: 26.0869565%}
+.r3 {top: 52.173913%}
+.r4 {top: 78.2608695%}
+
+#backdrop {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-image: url("backdrop.jpg");
+}
+#board {
+	position: absolute;
+	left: calc(50vw - 47.5vh);
+	top: calc(50vh - 40vh);
+	width: 80vh;
+	height: 80vh;
+}
+#set {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	height: 100vh;
+	width: 15vh;
+	background-color: rgba(0,0,0,0.5);
+}
+.l {
+	position: absolute;
+	left: 20%;
+	width: 9vh;
+	cursor: pointer;
+}
+#lup {
+	top: 33.5%;
+	cursor: pointer;
+}
+#ldown {
+	top: 57.5%;
+	cursor: pointer;
+}
+.lwhat {
+	position: absolute;
+	left: 20%;
+	top: -100%;
+	width: 9vh;
+}
