@@ -1,5 +1,3 @@
-//  Cheezy copyright 2002 - 2019 Tim Koop and 2018 - 2019 Joe Koop
-
 function init(n){
 	islandscapeportrait();
 	window.level = n;
