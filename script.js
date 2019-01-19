@@ -1,39 +1,10 @@
 function init(n){
-	islandscapeportrait();
 	window.level = n;
-	window.b = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
-//	window.b = [[Math.floor(Math.random()*2),Math.floor(Math.random()*2),Math.floor(Math.random()*2),Math.floor(Math.random()*2)],[Math.floor(Math.random()*2),Math.floor(Math.random()*2),Math.floor(Math.random()*2),Math.floor(Math.random()*2)],[Math.floor(Math.random()*2),Math.floor(Math.random()*2),Math.floor(Math.random()*2),Math.floor(Math.random()*2)],[Math.floor(Math.random()*2),Math.floor(Math.random()*2),Math.floor(Math.random()*2),Math.floor(Math.random()*2)]];
+	window.b = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]; // initiate the board
 	shuffleboard();
-	lwhat();
-//	alert((4096).toString(2));
-
 	setboard();
-//	Math.floor(Math.random()*4);  RETURNS 0, 1, 2, 3 RANDOMLY
-}
-
-function lwhat(){
-	if(landscapeorportrait == "landscape"){
-		document.getElementById("l000010000").style.top = "-20%";
-		document.getElementById("l000111000").style.top = "-20%";
-		document.getElementById("l001010100").style.top = "-20%";
-		document.getElementById("l101000101").style.top = "-20%";
-		document.getElementById("l101010101").style.top = "-20%";
-		document.getElementById("l010111010").style.top = "-20%";
-		document.getElementById("l111101111").style.top = "-20%";
-		document.getElementById("l111111111").style.top = "-20%";
-		document.getElementById("l" + level).style.top = "45.5%";
-	}
-	if(landscapeorportrait == "portrait"){
-		document.getElementById("l000010000").style.left = "-20%";
-		document.getElementById("l000111000").style.left = "-20%";
-		document.getElementById("l001010100").style.left = "-20%";
-		document.getElementById("l101000101").style.left = "-20%";
-		document.getElementById("l101010101").style.left = "-20%";
-		document.getElementById("l010111010").style.left = "-20%";
-		document.getElementById("l111101111").style.left = "-20%";
-		document.getElementById("l111111111").style.left = "-20%";
-		document.getElementById("l" + level).style.left = "45.5%";
-	}
+	$(".lwhat").css("visibility", "hidden");
+	$("#l" + level).css("visibility", "visible");
 }
 
 function shuffleboard(){
@@ -61,10 +32,7 @@ function checkboard(){
 		}
 	}
 	if(istheboardclear == true){
-//		window.
 	setTimeout(theboardisclear,50);
-//function(){
-//();}
 	}
 }
 
@@ -168,92 +136,61 @@ function pad(n, width, z) {
   return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 
-function islandscapeportrait(){
-	if(window.innerWidth > window.innerHeight){
-		window.landscapeorportrait = "landscape";
+function restyle(){
+	if($(window).width() < $(window).height()){ // if portrait
+		$("#board").css({
+			"top": "calc(50vh - 47.5vw)",
+			"left": "10%",
+			"width": "80vw",
+			"height": "80vw"
+		});
+		$("#set").css({
+			"width": "100vw",
+			"height": "15vw"
+		});
+		$(".l").css({
+			"top": "20%"
+		});
+		$("#lup").css({
+			"left": "57.5%",
+			"width": "9%"
+		});
+		$("#ldown").css({
+			"left": "33.3%",
+			"width": "9%"
+		});
+		$(".lwhat").css({
+			"top": "20%",
+			"width": "9%",
+			"left": "45.5%"
+		});
 	} else {
-		window.landscapeorportrait = "portrait";
-	}
-}
-
-function landscapeportrait(){
-	if(window.innerWidth < window.innerHeight && window.landscapeorportrait == "landscape"){
-		document.getElementById("board").style.left = "10%";
-		document.getElementById("board").style.top = "calc(50vh - 47.5vw)";
-		document.getElementById("board").style.width = "80vw";
-		document.getElementById("board").style.height = "80vw";
-		document.getElementById("set").style.width = "100vw";
-		document.getElementById("set").style.height = "15vw";
-		document.getElementById("lup").style.top = "20%";
-		document.getElementById("lup").style.left = "57.5%";
-		document.getElementById("ldown").style.top = "20%";
-		document.getElementById("ldown").style.left = "33.5%";
-		document.getElementById("l000010000").style.top = "20%";
-		document.getElementById("l000111000").style.top = "20%";
-		document.getElementById("l001010100").style.top = "20%";
-		document.getElementById("l101000101").style.top = "20%";
-		document.getElementById("l010111010").style.top = "20%";
-		document.getElementById("l101010101").style.top = "20%";
-		document.getElementById("l111101111").style.top = "20%";
-		document.getElementById("l111111111").style.top = "20%";
-		document.getElementById("lup").style.width = "9%";
-		document.getElementById("ldown").style.width = "9%";
-		document.getElementById("l000010000").style.width = "9%";
-		document.getElementById("l000111000").style.width = "9%";
-		document.getElementById("l001010100").style.width = "9%";
-		document.getElementById("l101000101").style.width = "9%";
-		document.getElementById("l010111010").style.width = "9%";
-		document.getElementById("l101010101").style.width = "9%";
-		document.getElementById("l111101111").style.width = "9%";
-		document.getElementById("l111111111").style.width = "9%";
-		window.landscapeorportrait = "portrait";
-		lwhat();
-	}
-/*	if(window.innerWidth > window.innerHeight && window.landscapeorportrait == "portrait"){
-		document.getElementById("board").style.left = "calc(50vw - 47.5vh)";
-		document.getElementById("board").style.top = "10vh";
-		document.getElementById("board").style.width = "80vh";
-		document.getElementById("board").style.height = "80vh";
-		document.getElementById("set").style.width = "15vh";
-		document.getElementById("set").style.height = "100vh";
-		document.getElementByClass("l").style.left = "20%";
-		document.getElementByClass("lwhat").style.left = "20%";
-		document.getElementByClass("l").style.width = "60%";
-		document.getElementByClass("lwhat").style.width = "60%";
-		window.landscapeorportrait = "landscape";
-		lwhat();
-	}*/
-	if(window.innerWidth > window.innerHeight && window.landscapeorportrait == "portrait"){
-		document.getElementById("board").style.left = "calc(50vw - 47.5vh)";
-		document.getElementById("board").style.top = "10%";
-		document.getElementById("board").style.width = "80vh";
-		document.getElementById("board").style.height = "80vh";
-		document.getElementById("set").style.width = "15vh";
-		document.getElementById("set").style.height = "100%";
-		document.getElementById("lup").style.top = "33.5%";
-		document.getElementById("lup").style.left = "20%";
-		document.getElementById("ldown").style.top = "57.5%";
-		document.getElementById("ldown").style.left = "20%";
-		document.getElementById("l000010000").style.left = "20%";
-		document.getElementById("l000111000").style.left = "20%";
-		document.getElementById("l001010100").style.left = "20%";
-		document.getElementById("l101000101").style.left = "20%";
-		document.getElementById("l010111010").style.left = "20%";
-		document.getElementById("l101010101").style.left = "20%";
-		document.getElementById("l111101111").style.left = "20%";
-		document.getElementById("l111111111").style.left = "20%";
-		document.getElementById("lup").style.width = "60%";
-		document.getElementById("ldown").style.width = "60%";
-		document.getElementById("l000010000").style.width = "60%";
-		document.getElementById("l000111000").style.width = "60%";
-		document.getElementById("l001010100").style.width = "60%";
-		document.getElementById("l101000101").style.width = "60%";
-		document.getElementById("l010111010").style.width = "60%";
-		document.getElementById("l101010101").style.width = "60%";
-		document.getElementById("l111101111").style.width = "60%";
-		document.getElementById("l111111111").style.width = "60%";
-		window.landscapeorportrait = "landscape";
-		lwhat();
+		$("#board").css({
+			"top": "10%",
+			"left": "calc(50vw - 47.5vh)",
+			"width": "80vh",
+			"height": "80vh"
+		});
+		$("#set").css({
+			"width": "15vh",
+			"height": "100vh"
+		});
+		$(".l").css({
+			"left": "20%"
+		});
+		$("#lup").css({
+			"top": "33.3%",
+			"width": "60%"
+		});
+		$("#ldown").css({
+			"top": "57.5%",
+			"width": "60%"
+		});
+		$(".lwhat").css({
+			"left": "20%",
+			"width": "60%",
+			"top": "45.5%"
+		});
 	}
 }
 
@@ -312,10 +249,10 @@ function ldown(){
 }
 
 jQuery(document).ready(function($){  // wait for the document to load
-	landscapeportrait();
 	init('010111010');
+	restyle();  // restyle the page for the apparent screen orientation
 });
 
-$(window).on('resize', function($){
-	landscapeportrait();
+$(window).on('resize', function($){  // when the screen is resized...
+	restyle();  // restyle the page for the apparent screen orientation
 });
