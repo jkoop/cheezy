@@ -1,0 +1,26 @@
+#body {
+	text-align: center;
+}
+
+#body h1 {
+	text-align: left;
+}
+
+#board, #set {
+	display: none;
+	vertical-align: top;
+}
+
+#body img {
+	width: 100px;
+	max-width: 23vw;
+	cursor: pointer;
+}
+
+#set {
+	margin: 52px 0 63px 50px;
+}
+
+#ldown {
+	transform: rotate(180deg);
+}
