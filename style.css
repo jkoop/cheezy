@@ -11,10 +11,14 @@
 	vertical-align: top;
 }
 
-#body img {
+#body img, #body svg {
 	width: 100px;
 	max-width: 23vw;
 	cursor: pointer;
+}
+
+#body svg {
+	cursor: unset;
 }
 
 #set {

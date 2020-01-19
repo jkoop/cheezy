@@ -2,6 +2,7 @@ Cheezy \game
 
 <link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
+<!-- include jQuery 3.4.1 -->
 
 <div id="loading" style="margin-bottom:12px">LOADING...</div>
 <div id="board" style="display:none"><?php
@@ -11,4 +12,16 @@ Cheezy \game
 		}
 		echo '<br>';
 	}
-?></div><div id="set" style="display:none"><img id="lup" class="l" src="arrow.svg" onclick="init(lup())" /><br class="right"><img id="l000010000" class="lwhat" src="level000010000.svg" /><img id="l000111000" class="lwhat" src="level000111000.svg" /><img id="l001010100" class="lwhat" src="level001010100.svg" /><img id="l101000101" class="lwhat" src="level101000101.svg" /><img id="l010111010" class="lwhat" src="level010111010.svg" /><img id="l101010101" class="lwhat" src="level101010101.svg" /><img id="l111101111" class="lwhat" src="level111101111.svg" /><img id="l111111111" class="lwhat" src="level111111111.svg" /><br class="right"><img id="ldown" class="l" src="arrow.svg" onclick="init(ldown())" /></div>
+?></div><div id="set" style="display:none"><img id="lup" class="l" src="arrow.svg" onclick="init(lup())" /><br class="right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.5 4.5" version="1.1">
+	<g style="fill:#fff">
+		<rect id="l0" width="1.3" height="1.3" x="0"   y="0"/>
+		<rect id="l1" width="1.3" height="1.3" x="1.6" y="0"/>
+		<rect id="l2" width="1.3" height="1.3" x="3.2" y="0"/>
+		<rect id="l3" width="1.3" height="1.3" x="0"   y="1.6"/>
+		<rect id="l4" width="1.3" height="1.3" x="1.6" y="1.6"/>
+		<rect id="l5" width="1.3" height="1.3" x="3.2" y="1.6"/>
+		<rect id="l6" width="1.3" height="1.3" x="0"   y="3.2"/>
+		<rect id="l7" width="1.3" height="1.3" x="1.6" y="3.2"/>
+		<rect id="l8" width="1.3" height="1.3" x="3.2" y="3.2"/>
+	</g>
+</svg><br class="right"><img id="ldown" class="l" src="arrow.svg" onclick="init(ldown())" /></div>
