@@ -1,2 +1,2 @@
 # Cheezy
-A puzzle game where the goal is to clear the board of cheese https://joekoop.com/games/cheezy/
+A puzzle game where the goal is to clear the board of cheese https://joekoop.com/cheezy
