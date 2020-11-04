@@ -6,11 +6,9 @@ $(window).on('load', function(){
 	restyle();
 	init('010111010');
 });
-
 $(window).on('resize', function(){
 	restyle();
 });
-
 function themeLocal(){
 	if(localStorage.lightTheme){
 		$("#set").css("filter", "invert(1)");
@@ -18,7 +16,6 @@ function themeLocal(){
 		$("#set").css("filter", "");
 	}
 }
-
 function init(n) {
 	window.level = n;
 	window.b = [
@@ -37,13 +34,11 @@ function init(n) {
 		}
 	}
 }
-
 function shuffleboard() {
 	for(i = 0; i < 100; i++) {
 		ch(Math.floor(Math.random() * 4), Math.floor(Math.random() * 4), false);
 	}
 }
-
 function setboard() {
 	for(i = 0; i < 4; i++) {
 		for(j = 0; j < 4; j++) {
@@ -52,7 +47,6 @@ function setboard() {
 	}
 	checkboard()
 }
-
 function checkboard() {
 	var istheboardclear = true;
 	for(i = 0; i < 4; i++) {
@@ -66,12 +60,10 @@ function checkboard() {
 		setTimeout(theboardisclear, 50);
 	}
 }
-
 function theboardisclear() {
 /*	alert("Congratulations!\nThe board is clear!");*/
 	init(window.level);
 }
-
 function ch(c, l, s = true) {
 	if(level == '000010000') {
 		eatcheese(c, l);
@@ -131,7 +123,6 @@ function ch(c, l, s = true) {
 		setboard();
 	}
 }
-
 function eatcheese(x, y) {
 	if(x == -1) {
 		return (false);
@@ -151,13 +142,11 @@ function eatcheese(x, y) {
 		b[y][x] = 0;
 	}
 }
-
 function pad(n, width, z) {
 	z = z || '0';
 	n = n + '';
 	return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
-
 function restyle(){
 	if($(window).width() >= 575){
 		$("#set").css("margin", '');
@@ -189,7 +178,6 @@ function restyle(){
 		$(".right").css("display", 'none');
 	}
 }
-
 function lup() {
 	if(window.level == "000010000") {
 		return "000111000";
@@ -216,7 +204,6 @@ function lup() {
 		return "000010000";
 	}
 }
-
 function ldown() {
 	if(window.level == "000010000") {
 		return "111111111";
