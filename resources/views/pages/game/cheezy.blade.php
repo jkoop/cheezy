@@ -1,6 +1,7 @@
 @extends('layouts.typical', [
     'lastChangedDate' => '2020-11-04',
     'allowOnlyContent' => true,
+    'githubRepo' => 'jkoop/cheezy',
 ])
 @section('title', 'cheezy')
 @section('description', 'puzzle game; clear the grid of cheese')
