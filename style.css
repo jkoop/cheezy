@@ -22,3 +22,14 @@ body svg {
 #ldown {
     transform: rotate(180deg);
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #111;
+    color: #fff;
+  }
+
+  .l {
+    filter: invert(1);
+  }
+}
