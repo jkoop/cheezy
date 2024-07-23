@@ -29,6 +29,10 @@ body svg {
     color: #fff;
   }
 
+  svg g {
+    stroke: white;
+  }
+
   .l {
     filter: invert(1);
   }
